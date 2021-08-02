@@ -1,5 +1,5 @@
-# UR手臂 package來源參考https://github.com/fmauch/universal_robot.git ＆ https://github.com/UniversalRobots/Universal_Robots_ROS_Driver.git
-# 安裝教學參考https://blog.csdn.net/zxxxiazai/article/details/103568577
+## UR手臂 package來源參考https://github.com/fmauch/universal_robot.git ＆ https://github.com/UniversalRobots/Universal_Robots_ROS_Driver.git
+## 安裝教學參考https://blog.csdn.net/zxxxiazai/article/details/103568577
 
 ## 1.install moveIt ＆ trac_ik
   ```bash
@@ -40,7 +40,7 @@
   ```  
 
 
-# 補充：
+## 補充：
    ````bash
    1.真實手臂與gazebo間的切換
      控制真實手臂與gazebo必須要更改 /universal_robot/ur5_moveit_config/config/controllers.yaml 文件
