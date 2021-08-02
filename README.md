@@ -1,22 +1,26 @@
-UR手臂 package來源參考https://github.com/fmauch/universal_robot.git ＆ https://github.com/UniversalRobots/Universal_Robots_ROS_Driver.git
-安裝教學參考https://blog.csdn.net/zxxxiazai/article/details/103568577
+# UR手臂 package來源參考https://github.com/fmauch/universal_robot.git ＆ https://github.com/UniversalRobots/Universal_Robots_ROS_Driver.git
+# 安裝教學參考https://blog.csdn.net/zxxxiazai/article/details/103568577
 
-1.install moveIt ＆ trac_ik
+## 1.install moveIt ＆ trac_ik
+  ```bash
   $ sudo apt-get install ros-melodic-moveit
   $ sudo apt-get install ros-melodic-trac-ik-kinematics-plugin
-
-2. gazebo test
-  請參考補充1
+  ```
+  
+## 2. gazebo test
+  ### 請參考補充1
+  ```bash
   $ roslaunch ur_gazebo ur5.launch
   $ roslaunch ur5_moveit_config ur5_moveit_planning_execution.launch sim:=true
     rviz控制（二則一）
   $ roslaunch ur5_moveit_config moveit_rviz.launch config:=true
     python控制（二則一）
   $ rosrun ur_move_test ur_move_test_node.py
-
-3. real robot control
+  ```
+## 3. real robot control
     ######注意執行順序不能改變######
-  請參考補充1
+  ### 請參考補充1
+  ```bash
   1.設定電腦ip 為192.168.0.100 （可以更改,如果更改電腦ip,手臂external_control.urp程序的ip也要做調整）
   2.開起手臂電源
   4.執行 roslaunch ur_robot_driver ur5_bringup.launch limited:=true robot_ip:= 192.168.0.12(robot_ip)
@@ -33,9 +37,11 @@ UR手臂 package來源參考https://github.com/fmauch/universal_robot.git ＆ ht
   7.roslaunch ur5_moveit_config moveit_rviz.launch config:=true 
   如果想用python控制手臂控制步驟7可以更換成python檔
     rosrun ur_move_test ur_move_test_node.py
+  ```  
 
 
-補充：
+# 補充：
+   ````bash
    1.真實手臂與gazebo間的切換
      控制真實手臂與gazebo必須要更改 /universal_robot/ur5_moveit_config/config/controllers.yaml 文件
      真實手臂必須在檔案內的  name: 後添加 scaled_pos_joint_traj_controller
@@ -59,7 +65,7 @@ UR手臂 package來源參考https://github.com/fmauch/universal_robot.git ＆ ht
      wrist_3_lower_limit="${-pi}" wrist_3_upper_limit="${pi}"
      預設是-pi to pi 可以去設定想要的角度
      如果想要讓gazebo初始狀態顯示為有限制過的角度 更改 ur5.launch文件 將limited的default設為true
-
+   ```
 
 
 
