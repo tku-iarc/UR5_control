@@ -1,0 +1,17 @@
+<launch>
+  
+  <!-- robot_ip: IP-address of the robot's socket-messaging server -->
+  <arg name="kinematics_config" default="$(find ur_description)/config/ur5_calibration.yaml"/>
+  <arg name="limited" default="true" doc="If true, limits joint range [-PI, PI] on all joints." />
+  
+
+  <include file="$(find ur5_moveit_config)/launch/ur5_moveit_planning_execution.launch">
+    <arg name="limited" value="$(arg limited)"/>
+  </include>
+
+  <include file="$(find ur5_moveit_config)/launch/moveit_rviz.launch">
+    <arg name="config" value="true"/>
+  </include>
+  <node name="ur_move_test_node" pkg="ur_move_test" type="ur_move_test.py" respawn="true" output="screen" />
+
+</launch>
