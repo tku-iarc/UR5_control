@@ -10,7 +10,7 @@ UR手臂 package來源參考https://github.com/fmauch/universal_robot.git ＆ ht
   ```
   
 ## 2. gazebo test
-  ### 請參考補充1
+  ### 請參考補充
   ```bash
   $ roslaunch ur_gazebo ur5.launch
   $ roslaunch ur5_moveit_config ur5_moveit_planning_execution.launch sim:=true
@@ -20,8 +20,7 @@ UR手臂 package來源參考https://github.com/fmauch/universal_robot.git ＆ ht
   $ rosrun ur_move_test ur_move_test_node.py
   ```
 ## 3. real robot control
-    ######注意執行順序不能改變######
-  ### 請參考補充1
+  ### 注意執行順序不能改變
   ```bash
   1.設定電腦ip 為192.168.0.100 （可以更改,如果更改電腦ip,手臂external_control.urp程序的ip也要做調整）
   2.開起手臂電源
