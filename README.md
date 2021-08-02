@@ -43,7 +43,7 @@ UR手臂 package來源參考https://github.com/fmauch/universal_robot.git ＆ ht
 
 
 ## 補充：
-   ````bash
+   ```bash
    1.真實手臂與gazebo間的切換
      控制真實手臂與gazebo必須要更改 /universal_robot/ur5_moveit_config/config/controllers.yaml 文件
      真實手臂必須在檔案內的  name: 後添加 scaled_pos_joint_traj_controller
