@@ -27,6 +27,7 @@ UR手臂 package來源參考https://github.com/fmauch/universal_robot.git ＆ ht
   1.設定電腦ip 為192.168.0.100 （可以更改,如果更改電腦ip,手臂external_control.urp程序的ip也要做調整）
   2.開起手臂電源
   4.執行 roslaunch ur_robot_driver ur5_bringup.launch limited:=true robot_ip:=192.168.0.12(robot_ip)
+  
   5.開起手臂程序
     示教器，運行程序 —> 文件 —> 加载程序 —> external_control.urp程序，打開—>運行
     可以看到终端显示：
@@ -36,6 +37,7 @@ UR手臂 package來源參考https://github.com/fmauch/universal_robot.git ＆ ht
 	[ INFO]: Robot requested program
 	[ INFO]: Sent program to robot
 	[ INFO]: Robot ready to receive control commands.
+	
   6.roslaunch ur5_moveit_config ur5_moveit_planning_execution.launch limited:=true
   7.roslaunch ur5_moveit_config moveit_rviz.launch config:=true 
   如果想用python控制手臂控制步驟7可以更換成python檔
