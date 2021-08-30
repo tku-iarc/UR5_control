@@ -12,11 +12,13 @@ UR手臂 package來源參考https://github.com/fmauch/universal_robot.git ＆ ht
 ## 2. gazebo test
   ### 請參考補充
   ```bash
-  $ roslaunch ur_gazebo ur5.launch
-  $ roslaunch ur5_moveit_config ur5_moveit_planning_execution.launch sim:=true
-    rviz控制（二則一）
-  $ roslaunch ur5_moveit_config moveit_rviz.launch config:=true
-    python控制（二則一）
+ 1. $ roslaunch ur_gazebo ur5.launch
+ 2. $ roslaunch ur5_moveit_config ur5_moveit_planning_execution.launch sim:=true
+  
+ 3. 控制二則一
+    rviz
+   $ roslaunch ur5_moveit_config moveit_rviz.launch config:=true
+    python
   $ rosrun ur_move_test ur_move_test_node.py
   ```
 ## 3. real robot control
@@ -24,7 +26,7 @@ UR手臂 package來源參考https://github.com/fmauch/universal_robot.git ＆ ht
   ```bash
   1.設定電腦ip 為192.168.0.100 （可以更改,如果更改電腦ip,手臂external_control.urp程序的ip也要做調整）
   2.開起手臂電源
-  4.執行 roslaunch ur_robot_driver ur5_bringup.launch limited:=true robot_ip:= 192.168.0.12(robot_ip)
+  4.執行 roslaunch ur_robot_driver ur5_bringup.launch limited:=true robot_ip:=192.168.0.12(robot_ip)
   5.開起手臂程序
     示教器，運行程序 —> 文件 —> 加载程序 —> external_control.urp程序，打開—>運行
     可以看到终端显示：
